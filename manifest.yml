@@ -1,0 +1,4 @@
+applications:
+    - name: callforhumanity
+      path: .
+      buildpack: staticfile_buildpack

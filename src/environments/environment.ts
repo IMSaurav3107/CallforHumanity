@@ -5,7 +5,7 @@
 
 export const environment = {
   production: false,
-  //NODE_HOST: 'https://callforhumanity.eu-gb.mybluemix.net'
-    NODE_HOST: 'https://mycallsda-an123.eu-gb.mybluemix.net'
+  NODE_HOST: 'https://CallforHumanity.eu-gb.mybluemix.net'
+  //NODE_HOST: 'https://mycallsda-an123.eu-gb.mybluemix.net'
 };
 

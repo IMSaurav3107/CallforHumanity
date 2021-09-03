@@ -139,7 +139,8 @@ export class DashboardComponent implements OnInit {
   }
 
   getTransactionsFromDB() {
-    this._httpService.getTransactions(this.NGOId).subscribe((data) => {
+  this._httpService.getTransactions(this.NGOId).subscribe((data) => {
+ // this._httpService.getProducts(this.NGOId).subscribe((data) => {
       if (data["success"] != 1) {
         console.log(data["message"]);
       } else {
@@ -230,7 +231,7 @@ export class DashboardComponent implements OnInit {
     return json;
   }
 
-  getRequestDateData(num){
+ /* getRequestDateData(num){
     var json = [];
 
     if(num == 0){
@@ -249,7 +250,7 @@ export class DashboardComponent implements OnInit {
     // console.log(sortedjson)
     return sortedjson;
     
-  }
+  }*/
 
   getRequestDateDataMonthly(){
     var json = [
@@ -299,7 +300,7 @@ export class DashboardComponent implements OnInit {
      var config = {
      type: 'bar',
      data: {
-       labels: ['Feburary','March','April'],
+       labels: ['February','March','April'],
        datasets: datasetMontly
      },
      options: {
@@ -441,7 +442,7 @@ export class DashboardComponent implements OnInit {
   editRequest(id) {
     var editlist = _.find(this.userData, { ID: id });
     $("#tID").val(editlist.ID);
-    $("#tDate").val(editlist.DATE.trim());
+    $("#tDate").val(editlist.DATE.trim);
     $("#tFirstName").val(editlist.First_Name);
     $("#tLastName").val(editlist.Last_Name);
     $("#tPackages").val(editlist.NO_OF_PACKAGES);

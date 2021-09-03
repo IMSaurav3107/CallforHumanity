@@ -205,7 +205,7 @@
        <table *ngIf= "tableloaded" class="table table-hover table-sm">
            <thead class="thead-dark">
           <tr>
-            <th scope="col" sortable="ID" (sort)="onSort($event)">Transaction #</th>
+           <th scope="col" sortable="ID" (sort)="onSort($event)">Transaction #</th>
             <th scope="col" sortable="DATE" (sort)="onSort($event)">Date</th>
             <th scope="col" sortable="First_Name" (sort)="onSort($event)">First Name</th>
             <th scope="col" >Social Security</th>
@@ -213,7 +213,11 @@
             <th scope="col" sortable="NO_OF_PACKAGES" (sort)="onSort($event)">Bags Requested</th> 
             <th scope="col" sortable="STATUS" (sort)="onSort($event)">Status</th>
             <th scope="col">Actions</th>
-          </tr>
+            <!--<th scope="col" sortable="PRODUCT" (sort)="onSort($event)">Product</th>
+            <th scope="col" sortable="TRANSACTION_ID" (sort)="onSort($event)">Incoming Request #</th>
+            <th scope="col" sortable="NGO_ID" (sort)="onSort($event)">NGO ID</th>
+            <th scope="col" sortable="NO_OF_PACKAGES" (sort)="onSort($event)">Bags Requested</th>--> 
+		  </tr>
           </thead>
           <tbody> 
          
@@ -231,6 +235,10 @@
             <td>
               <a class="edit cursor" (click)="editRequest(user.ID)" title="Edit"><i class="fa fa-pencil" style="color:#18A2B8"></i></a>
             </td>
+            <!--<th scope="row">{{ user.PRODUCT }}</th>
+            <td>{{ user.TRANSACTION_ID }}</td>
+            <td>{{ user.NGO_ID }}</td>
+            <td>{{ user.NO_OF_PACKAGES }}</td>-->
           </tr>
           </tbody>
         </table>

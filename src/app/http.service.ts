@@ -32,6 +32,11 @@ export class HttpService {
     return this.http.post(environment.NODE_HOST + '/getTransactions',{ NGOId: payload }, this.httpOptions);
   }
 
+  getProducts(ngoid){
+    const payload = ngoid
+    return this.http.post(environment.NODE_HOST + '/getProducts',{ NGOId: payload }, this.httpOptions);
+  }
+
   updateTransaction(tId, status,key){
     const payload = tId
     const statusPayload = status

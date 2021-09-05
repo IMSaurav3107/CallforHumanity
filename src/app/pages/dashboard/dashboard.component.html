@@ -12,8 +12,12 @@
           <div class="col-7 col-md-8">
             <div class="numbers">
               <p class="card-category">Goody Bag</p>
-              <p class="card-title">{{rationbags}}
+              <!--<p class="card-title">{{rationbags}}-->
                 <p>
+            </div>
+            <div class="button" align="right">
+             <button type="button" class="btn btn-primary" (click)="clickEvent()">Check Goody Bag</button>
+             <!--<h6>{{msg}}</h6>-->
             </div>
           </div>
         </div>
@@ -92,7 +96,7 @@
           </div>
           <div class="col-7 col-md-8">
             <div class="numbers">
-              <p class="card-category">Incoming Requests </p>
+              <p class="card-category">Total Demand Bags Not Fulfilled Yet</p>
               <p class="card-title">{{totalunprocessedrequests}}
                 <p>
             </div>
@@ -200,30 +204,38 @@
         <!-- <p class="card-category">Sorted by Days</p> -->
       </div>
       <div class="card-body table-responsive pt-0">
-        <button type="button" class="btn add-new pull-right border rounded"><i class="fa fa-search"></i> Search Product</button>
+        <!--<button type="button" class="btn add-new pull-right border rounded"><i class="fa fa-search"></i> Search Product</button>-->
+        <div class="searchBox pull-right border rounded">
+        <input (keyup)="onSubmit($event)" 
+          [(ngModel)]="searchValue" type="text" 
+          id="searchKey" class="form-control"
+          placeholder="Search Product" />
+      </div>
         <ngx-loading [show]="loading" [config]="{backdropBackgroundColour:'rgba(0, 0, 0, 0.05)',animationType: ngxLoadingAnimationTypes.rectangleBounce, primaryColour: '#E3E3E3', backdropBorderRadius: '3px'}"></ngx-loading>
        <table *ngIf= "tableloaded" class="table table-hover table-sm">
            <thead class="thead-dark">
           <tr>
-           <th scope="col" sortable="ID" (sort)="onSort($event)">Transaction #</th>
+          <!-- <th scope="col" sortable="ID" (sort)="onSort($event)">Transaction #</th>
             <th scope="col" sortable="DATE" (sort)="onSort($event)">Date</th>
             <th scope="col" sortable="First_Name" (sort)="onSort($event)">First Name</th>
             <th scope="col" >Social Security</th>
             <th scope="col" >Family ID</th>
             <th scope="col" sortable="NO_OF_PACKAGES" (sort)="onSort($event)">Bags Requested</th> 
             <th scope="col" sortable="STATUS" (sort)="onSort($event)">Status</th>
-            <th scope="col">Actions</th>
-            <!--<th scope="col" sortable="PRODUCT" (sort)="onSort($event)">Product</th>
-            <th scope="col" sortable="TRANSACTION_ID" (sort)="onSort($event)">Incoming Request #</th>
-            <th scope="col" sortable="NGO_ID" (sort)="onSort($event)">NGO ID</th>
-            <th scope="col" sortable="NO_OF_PACKAGES" (sort)="onSort($event)">Bags Requested</th>--> 
-		  </tr>
+            <th scope="col">Actions</th>-->
+            <th scope="col" sortable="PRODUCT" (sort)="onSort($event)">Product</th>
+            <th scope="col" sortable="TRANSACTION_ID" (sort)="onSort($event)">Demand Request #</th>
+            <th scope="col" sortable="NAME" (sort)="onSort($event)">NGO</th>
+            <th scope="col" sortable="NO_OF_PACKAGES" (sort)="onSort($event)">Bags Requested</th>
+            <th scope="col">Check What's Inside The Bag</th>
+            <th scope="col">Add to Goody Bag</th>
+            </tr>
           </thead>
           <tbody> 
          
 
-          <tr *ngFor="let user of userData | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
-            <th scope="row">{{ user.ID }}</th>
+           <tr *ngFor="let user of userData | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+           <!-- <th scope="row">{{ user.ID }}</th>
             <td >{{ user.DATE.trim() }}</td>
             <td>
              {{ user.First_Name }}
@@ -234,11 +246,13 @@
             <td><i class="fa fa-circle pr-1 {{user.STATUS == 'Completed'? 'text-success': user.STATUS == 'Requested'?'text-warning':user.STATUS=='Invalid'?'text-danger':'text-info'}}"></i>{{ user.STATUS }}</td>
             <td>
               <a class="edit cursor" (click)="editRequest(user.ID)" title="Edit"><i class="fa fa-pencil" style="color:#18A2B8"></i></a>
-            </td>
-            <!--<th scope="row">{{ user.PRODUCT }}</th>
+            </td>-->
+            <th scope="row">{{ user.PRODUCT }}</th>
             <td>{{ user.TRANSACTION_ID }}</td>
-            <td>{{ user.NGO_ID }}</td>
-            <td>{{ user.NO_OF_PACKAGES }}</td>-->
+            <td>{{ user.NAME }}</td>
+            <td>{{ user.NO_OF_PACKAGES }}</td>
+            <td><a title="List all the products in the bag"><i class="fa fa-list" aria-hidden="true" style="color:#CD5C5C"></i></a></td>
+            <td><a title="Add to Goody Bag"><i class="fa fa-plus" aria-hidden="true" style="color:#18A2B8"></i></a></td>
           </tr>
           </tbody>
         </table>

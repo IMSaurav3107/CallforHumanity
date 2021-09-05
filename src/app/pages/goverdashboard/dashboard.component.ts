@@ -43,6 +43,7 @@ export class GovernDashboardComponent implements OnInit{
   rationbags = 0;
   bagsdistributed = 0;
   beneficiaries = 0;
+  demandbagsfull = 25341;
   totalunprocessedrequests = 0;
   tableloaded = false;
 
@@ -93,7 +94,8 @@ export class GovernDashboardComponent implements OnInit{
 
   getTransactionsFromDB() {
     this.loading = true;
-    this._httpService.getTransactionsForGovernment().subscribe((data) => {
+  //  this._httpService.getTransactionsForGovernment().subscribe((data) => {
+      this._httpService.getProductsForNGO().subscribe((data) => {
       if (data["success"] != 1) {
         console.log(data["message"]);
       } else {
@@ -103,6 +105,10 @@ export class GovernDashboardComponent implements OnInit{
         this.tableloaded = true;
       }
     });
+  }
+
+  clickEvent(){
+    $("#editDemandModal").modal("toggle");
   }
 
   getNGOStats() {
@@ -274,7 +280,7 @@ export class GovernDashboardComponent implements OnInit{
 
        //Pie chart Province
    
-   this.piecanvas2 = document.getElementById("chartRequestStatusProvince");
+  /* this.piecanvas2 = document.getElementById("chartRequestStatusProvince");
    this.ctx = this.piecanvas2.getContext("2d");
    var requestProvince = this.getRequestProvinceData();
    var requestProvinceLabels = this.getRequestProvinceLabels();
@@ -308,7 +314,7 @@ export class GovernDashboardComponent implements OnInit{
          usePointStyle: true,
        },
      },
-   });
+   });*/
 
      //Bar chart
     this.barcanvas1 = document.getElementById('requestDateChartMonthly')
@@ -335,7 +341,7 @@ export class GovernDashboardComponent implements OnInit{
    var monthlyChart = new Chart(this.ctx, config); 
 
     //Pie chart
-    this.piecanvas1 = document.getElementById("chartRequestStatus");
+    /*this.piecanvas1 = document.getElementById("chartRequestStatus");
     this.ctx = this.piecanvas1.getContext("2d");
     var requestStatusdata = this.getRequestStatusPieChartData();
     this.requestStatusLabel = this.getRequestStatusPieChartLabels(true);
@@ -370,7 +376,7 @@ export class GovernDashboardComponent implements OnInit{
           usePointStyle: true,
         },
       },
-    });
+    });*/
 
    
 
@@ -383,7 +389,7 @@ export class GovernDashboardComponent implements OnInit{
 		var cfg = {
 			data: {
 				datasets: [{
-					label: 'Daily Completed Requests',
+					label: 'Bags Distributed Daily ',
 					backgroundColor: '#FCC468',
 					borderColor: '#FCC468',
 					data: reqdateData1,
@@ -393,7 +399,7 @@ export class GovernDashboardComponent implements OnInit{
 					lineTension: 0,
 					borderWidth: 2
 				},{
-          label: 'Daily Incoming Requests ',
+          label: 'Goody Bags Received Daily ',
 					backgroundColor: '#FF6384',
 					borderColor: '#FF6384',
 					data: reqdateDate2,

@@ -139,8 +139,8 @@ export class DashboardComponent implements OnInit {
   }
 
   getTransactionsFromDB() {
-  this._httpService.getTransactions(this.NGOId).subscribe((data) => {
- // this._httpService.getProducts(this.NGOId).subscribe((data) => {
+  //this._httpService.getTransactions(this.NGOId).subscribe((data) => {
+    this._httpService.getProducts(this.NGOId).subscribe((data) => {
       if (data["success"] != 1) {
         console.log(data["message"]);
       } else {

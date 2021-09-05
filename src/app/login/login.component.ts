@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    if(this.authForm.value.regno == 'govt' && this.authForm.value.password == 'admin'){
+    if(this.authForm.value.regno == 'ngouser' && this.authForm.value.password == 'ngouser123'){
       this.authService.signIn(this.authForm.value);
       this.router.navigateByUrl('/government');
     }else{

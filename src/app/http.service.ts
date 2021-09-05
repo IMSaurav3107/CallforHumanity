@@ -104,9 +104,13 @@ export class HttpService {
 
 
 
-  //Government APIS
+  //NGO APIS
   getTransactionsForGovernment(){
     return this.http.get(environment.NODE_HOST + '/getTransactionsForGovernment', this.httpOptions);
+  }
+
+  getProductsForNGO(){
+    return this.http.get(environment.NODE_HOST + '/getProductsForNGO', this.httpOptions);
   }
 
   getUserRequestForGovernment(){

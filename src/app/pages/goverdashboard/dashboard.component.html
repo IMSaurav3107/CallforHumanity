@@ -1,5 +1,116 @@
 <div class="row">
-  <div class="col-lg-3 col-md-6 col-sm-6">
+  <div class="col-lg-8 col-md-6 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-body ">
+        <ngx-loading [show]="loading" [config]="{backdropBackgroundColour:'rgba(0, 0, 0, 0.05)',animationType: ngxLoadingAnimationTypes.rectangleBounce, primaryColour: '#E3E3E3', backdropBorderRadius: '3px'}"></ngx-loading>
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-warning">
+              <i class="nc-icon nc-basket text-warning"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="button" align="right">
+             <button type="button" class="btn btn-primary" (click)="clickEvent()">Create a Demand Bag</button>
+             <!--<h6>{{msg}}</h6>-->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer ">
+        <hr>
+        <div class="stats">
+          <i class="fa fa-refresh"></i> Update Now
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4 col-md-6 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-body ">
+        <ngx-loading [show]="loading" [config]="{backdropBackgroundColour:'rgba(0, 0, 0, 0.05)',animationType: ngxLoadingAnimationTypes.rectangleBounce, primaryColour: '#E3E3E3', backdropBorderRadius: '3px'}"></ngx-loading>
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-warning">
+              <i class="fa fa-shopping-bag" aria-hidden="true" style="color:#8B4513"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category">Total Demand Bags</p>
+              <p class="card-title">{{rationbags}}
+                <p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer ">
+        <hr>
+        <div class="stats">
+          <i class="fa fa-calendar-o"></i> Last 1 month
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-body ">
+        <ngx-loading [show]="loading" [config]="{backdropBackgroundColour:'rgba(0, 0, 0, 0.05)',animationType: ngxLoadingAnimationTypes.rectangleBounce, primaryColour: '#E3E3E3', backdropBorderRadius: '3px'}"></ngx-loading>
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-warning">
+              <i class="fa fa-shopping-bag" aria-hidden="true" style="color:#32CD32"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category">Demand Bags Fulfilled</p>
+              <p class="card-title">{{demandbagsfull}}
+                <p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer ">
+        <hr>
+        <div class="stats">
+          <i class="fa fa-calendar-o"></i> Last 1 month
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6 col-md-6 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-body ">
+        <ngx-loading [show]="loading" [config]="{backdropBackgroundColour:'rgba(0, 0, 0, 0.05)',animationType: ngxLoadingAnimationTypes.rectangleBounce, primaryColour: '#E3E3E3', backdropBorderRadius: '3px'}"></ngx-loading>
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-warning">
+              <i class="fa fa-shopping-bag" aria-hidden="true" style="color:#FF4500"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category">Demand Bags Not Fulfilled Yet</p>
+              <p class="card-title">{{rationbags - demandbagsfull}}
+                <p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer ">
+        <hr>
+        <div class="stats">
+          <i class="fa fa-calendar-o"></i> Last 1 month
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+ <!-- <div class="col-lg-3 col-md-6 col-sm-6">
     <div class="card card-stats">
       <div class="card-body ">
         <ngx-loading [show]="loading" [config]="{backdropBackgroundColour:'rgba(0, 0, 0, 0.05)',animationType: ngxLoadingAnimationTypes.rectangleBounce, primaryColour: '#E3E3E3', backdropBorderRadius: '3px'}"></ngx-loading>
@@ -25,8 +136,8 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="col-lg-3 col-md-6 col-sm-6">
+  </div>-->
+  <div class="col-lg-6 col-md-6 col-sm-6">
     <div class="card card-stats">
       <div class="card-body ">
         <ngx-loading [show]="loading" [config]="{backdropBackgroundColour:'rgba(0, 0, 0, 0.05)',animationType: ngxLoadingAnimationTypes.rectangleBounce, primaryColour: '#E3E3E3', backdropBorderRadius: '3px'}"></ngx-loading>
@@ -48,12 +159,12 @@
       <div class="card-footer ">
         <hr>
         <div class="stats">
-          <i class="fa fa-calendar-o"></i> Last day
+          <i class="fa fa-calendar-o"></i> Last 1 month
         </div>
       </div>
     </div>
   </div>
-  <div class="col-lg-3 col-md-6 col-sm-6">
+  <!--<div class="col-lg-3 col-md-6 col-sm-6">
     <div class="card card-stats">
       <div class="card-body ">
         <ngx-loading [show]="loading" [config]="{backdropBackgroundColour:'rgba(0, 0, 0, 0.05)',animationType: ngxLoadingAnimationTypes.rectangleBounce, primaryColour: '#E3E3E3', backdropBorderRadius: '3px'}"></ngx-loading>
@@ -79,8 +190,8 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="col-lg-3 col-md-6 col-sm-6">
+  </div>-->
+  <div class="col-lg-6 col-md-6 col-sm-6">
     <div class="card card-stats">
       <div class="card-body ">
         <ngx-loading [show]="loading" [config]="{backdropBackgroundColour:'rgba(0, 0, 0, 0.05)',animationType: ngxLoadingAnimationTypes.rectangleBounce, primaryColour: '#E3E3E3', backdropBorderRadius: '3px'}"></ngx-loading>
@@ -92,7 +203,7 @@
           </div>
           <div class="col-7 col-md-8">
             <div class="numbers">
-              <p class="card-category">Incoming Requests </p>
+              <p class="card-category">Total Goody Bags Received</p>
               <p class="card-title">{{totalunprocessedrequests}}
                 <p>
             </div>
@@ -102,7 +213,7 @@
       <div class="card-footer ">
         <hr>
         <div class="stats">
-          <i class="fa fa-refresh"></i> Update now
+          <i class="fa fa-calendar-o"></i> In Last 1 day
         </div>
       </div>
     </div>
@@ -110,7 +221,7 @@
 </div>
 
 <div class="row">
-   <div class="col-md-4">
+   <!--<div class="col-md-4">
     <div class="card ">
       <div class="card-header ">
         <h5 class="card-title">Request Statistics</h5>
@@ -122,19 +233,19 @@
       </div>
       <div class="card-footer ">
         <div class="legend d-inline" *ngFor="let label of requestStatusLabel" >
-        <div class="d-inline"><i class="fa fa-circle p-2" style="color: 'label.color'"></i> {{label.status}}</div>
+        <div class="d-inline"><i class="fa fa-circle p-2" style="color: 'label.color'"></i> {{label.status}}</div>-->
           <!-- <i class="fa fa-circle text-primary"></i> {{requestStatus[0].STATUS}}
           <i class="fa fa-circle text-warning"></i> {{requestStatus[1].STATUS}}
           <i class="fa fa-circle text-danger"></i> {{requestStatus[2].STATUS}}
           <i class="fa fa-circle text-gray"></i> {{requestStatus[3].STATUS}} -->
-        </div>
+        <!--</div>
       </div>
     </div>
-  </div>
-  <div class="col-md-8">
+  </div>-->
+  <div class="col-md-6">
     <div class="card card-chart">
       <div class="card-header">
-        <h5 class="card-title">Requests Completed vs Incoming Requests : All NGOs</h5>
+        <h5 class="card-title">Bags Distributed vs Goody Bags</h5>
         <p class="card-category">on Daily Basis</p>
       </div>
       <div class="card-body">
@@ -153,12 +264,10 @@
       </div> -->
     </div>
   </div>
-</div>
-<div class="row">
-  <div class="col-md-8">
+  <div class="col-md-6">
     <div class="card card-chart">
       <div class="card-header">
-        <h5 class="card-title">Requests Progress: {{NGONAME }}</h5>
+        <h5 class="card-title">Requests Progress {{NGONAME }}</h5>
         <p class="card-category">on Monthly Basis</p>
       </div>
       <div class="card-body">
@@ -177,7 +286,7 @@
       </div> -->
     </div>
   </div>
-  <div class="col-md-4">
+<!-- <div class="col-md-4">
    <div class="card ">
      <div class="card-header ">
        <h5 class="card-title">State (Province) Statistics</h5>
@@ -188,37 +297,47 @@
        <canvas id="chartRequestStatusProvince" width="180px" height="120px"></canvas>
      </div>
    </div>
- </div>
+ </div>-->
 
 </div>
 <div class="row">
   <div class="col-md-12">
     <div class="card ">
       <div class="card-header ">
-          <h5 class="card-title">Requests Details</h5>
+          <h5 class="card-title">Request Details By Product</h5>
         <!-- <p class="card-category">Sorted by Days</p> -->
       </div>
       <div class="card-body table-responsive pt-0">
-        <button type="button" class="btn add-new pull-right border rounded"><i class="fa fa-search"></i> Search Citizen</button>
+        <!--<button type="button" class="btn add-new pull-right border rounded"><i class="fa fa-search"></i> Search Product</button>-->
+        <div class="searchBox pull-right border rounded">
+        <input (keyup)="onSubmit($event)" 
+          [(ngModel)]="searchValue" type="text" 
+          id="searchKey" class="form-control"
+          placeholder="Search Product" />
+      </div>
         <ngx-loading [show]="loading" [config]="{backdropBackgroundColour:'rgba(0, 0, 0, 0.05)',animationType: ngxLoadingAnimationTypes.rectangleBounce, primaryColour: '#E3E3E3', backdropBorderRadius: '3px'}"></ngx-loading>
        <table *ngIf= "tableloaded" class="table table-hover table-sm">
            <thead class="thead-dark">
           <tr>
-            <th scope="col" sortable="ID" (sort)="onSort($event)">Transaction #</th>
+          <!--  <th scope="col" sortable="ID" (sort)="onSort($event)">Transaction #</th>
             <th scope="col" sortable="DATE" (sort)="onSort($event)">Date</th>
             <th scope="col" sortable="First_Name" (sort)="onSort($event)">First Name</th>
             <th scope="col" >Social Security</th>
             <th scope="col" >NGO Name</th>
             <th scope="col" sortable="NO_OF_PACKAGES" (sort)="onSort($event)">Bags Requested</th> 
             <th scope="col" sortable="STATUS" (sort)="onSort($event)">Status</th>
-            <th scope="col">Actions</th>
+            <th scope="col">Actions</th>-->
+            <th scope="col" sortable="PRODUCT" (sort)="onSort($event)">Product</th>
+            <th scope="col" sortable="TRANSACTION_ID" (sort)="onSort($event)">Transaction #</th>
+            <th scope="col" sortable="FIRST_NAME" (sort)="onSort($event)">Donor's First Name</th>
+            <th scope="col" sortable="LAST_NAME" (sort)="onSort($event)">Donor's Last Name</th>
+            <th scope="col" sortable="NO_OF_PACKAGES" (sort)="onSort($event)">Bags Donated</th>
+            <th scope="col">Check What's Inside The Bag</th>
           </tr>
           </thead>
           <tbody> 
-         
-
           <tr *ngFor="let user of userData | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
-            <th scope="row">{{ user.ID }}</th>
+            <!--<th scope="row">{{ user.ID }}</th>
             <td >{{ user.DATE.trim() }}</td>
             <td>
              {{ user.First_Name }}
@@ -229,7 +348,13 @@
             <td><i class="fa fa-circle pr-1 {{user.STATUS == 'Completed'? 'text-success': user.STATUS == 'Requested'?'text-warning':user.STATUS=='Invalid'?'text-danger':'text-info'}}"></i>{{ user.STATUS }}</td>
             <td>
               <a class="edit cursor" (click)="editRequest(user.ID)" title="Edit"><i class="fa fa-eye" style="color:#18A2B8"></i></a>
-            </td>
+            </td>-->
+            <th scope="row">{{ user.PRODUCT }}</th>
+            <td>{{ user.TRANSACTION_ID }}</td>
+            <td>{{ user.FIRST_NAME }}</td>
+            <td>{{ user.LAST_NAME }}</td>
+            <td>{{ user.NO_OF_PACKAGES }}</td>
+            <td><a title="List all the products in the bag"><i class="fa fa-list" aria-hidden="true" style="color:#CD5C5C"></i></a></td>
           </tr>
           </tbody>
         </table>
@@ -321,6 +446,63 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary" id="updateTransactionButton" (click)="updateTransactionData()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="editDemandModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" >Enter the Products</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <form>
+            <div class="form-group row">
+              <label class="col-sm-4 col-form-label">Product 1</label>
+              <div class="col-sm-8">
+                <input type="text" style="color:#0000FF">
+              </div>
+            </div>
+            <hr>
+            <div class="form-group row">
+              <label class="col-sm-4 col-form-label">Product 2</label>
+              <div class="col-sm-8">
+                <input type="text" style="color:#0000FF">
+              </div>
+            </div>
+            <hr>
+            <div class="form-group row">
+              <label class="col-sm-4 col-form-label">Product 3</label>
+              <div class="col-sm-8">
+                <input type="text" style="color:#0000FF">
+              </div>
+            </div>
+            <hr>
+            <div class="form-group row">
+              <label class="col-sm-4 col-form-label">Product 4</label>
+              <div class="col-sm-8">
+                <input type="text" style="color:#0000FF">
+              </div>
+            </div>
+            <hr>
+            <div class="form-group row">
+              <label class="col-sm-4 col-form-label">Number of Bags</label>
+              <div class="col-sm-8">
+                <input type="number" style="color:#708090">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Add More Products</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
